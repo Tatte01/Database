@@ -1,0 +1,27 @@
+<%- include("header", {title: title}); %>
+
+<h1>Nr : <%= res[0].invoice_id %> </h1>
+
+<table>
+    <tr>
+        <th>Line Nr</th>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Quantity</th>
+        <th>Price st</th>
+        <th>Line total</th>
+    </tr>
+    <% for (const faktura of res) { %> 
+    <tr>
+        <td><%= faktura.line_number %></td>
+        <td><%= faktura.product_id %></td>
+        <td><%= faktura.product_name %></td>
+        <td><%= faktura.quantity %></td>
+        <td><%= faktura.unit_price %></td>
+        <td><%= faktura.line_total %></td>
+    </tr>
+    <% } %>
+
+</table>
+
+<%- include("footer"); %>

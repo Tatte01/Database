@@ -1,0 +1,21 @@
+<%- include("header", { title: title }); %>
+<p></p>
+
+<form class="label-left" method="post" action="/invdel">
+    <fieldset>
+        <legend>Delete Amount</legend>
+
+        <label for="id">ID</label>
+        <input id="id" type="text" name="id" value="<%= typeof productId !== 'undefined' ? productId : '' %>" readonly>
+
+        <label for="shelf">Shelf</label>
+        <input id="shelf" type="text" name="shelf" value="<%= typeof shelfLocation !== 'undefined' ? shelfLocation : '' %>">
+
+        <label for="amount">Amount</label>
+        <input id="amount" type="number" name="amount">
+
+        <input type="submit" name="doit" value="Add">
+    </fieldset>
+</form>
+
+<%- include("footer"); %>

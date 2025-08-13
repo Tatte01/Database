@@ -1,0 +1,28 @@
+<%- include ("header", {title: title}); %>
+
+<h1>This is a list of all your current customers</h1>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>PhoneNr</th>
+        <th>New order</th>
+    </tr>
+    <% for (const customer of res) { %> 
+        <tr>
+            <td><%= customer.id %></td>
+            <td><%= customer.name %></td>
+            <td><%= customer.address %></td>
+            <td><%= customer.phone %></td>
+            <td>
+                <a href="/createorder/<%= customer.id %>">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                </a>
+            </td>
+        </tr>
+    <% }  %>
+</table>
+
+<%- include ("footer"); %>

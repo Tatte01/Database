@@ -1,0 +1,24 @@
+<%- include ("header", {title: title}); %>
+<p></p>
+
+<form class="label-left" method="post">
+    <fieldset>
+        <legend>Create account</legend>
+
+        <label for="id">Id</label>
+        <input id="id" type="text" name="id">
+
+        <label for="name">Name</label>
+        <input id="name" type="text" name="name">
+
+        <label for="price">Price (<100)</label>
+        <input id="price" type="number" name="price">
+
+        <label for="category">Category (Hot,Cold)</label>
+        <input id="category" type="text" name="category">
+
+        <input type="submit" name="doit" value="Create">
+    </fieldset>
+</form>
+
+<%- include ("footer"); %>

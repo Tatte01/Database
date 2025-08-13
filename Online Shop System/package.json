@@ -1,0 +1,16 @@
+{
+  "name": "eshop1",
+  "version": "1.0.0",
+  "description": "Jag valde att ta bort AUTO_Increment när jag märkte att man inte kunde manuelt sätta in id.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  }
+}

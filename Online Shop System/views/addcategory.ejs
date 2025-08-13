@@ -1,0 +1,12 @@
+<%- include("header", { title: title }); %>
+
+<h2>Add Category for Product <%= productId %></h2>
+
+<form method="post" action="/addcategory">
+    <input type="hidden" name="id" value="<%= productId %>">
+    <label for="category">Categories (comma-separated):</label>
+    <input type="text" name="category" id="category" required placeholder="Enter categories">
+    <input type="submit" value="Add Categories">
+</form>
+
+<%- include("footer"); %>

@@ -1,0 +1,42 @@
+<%- include("header", { title: title }); %>
+<h1>Create Order for Customer</h1>
+<h1>Nr : <%= customer[0].id %> </h1>
+<h1>Name : <%= customer[0].name %></h1>
+
+
+
+
+<h1>Place an Order</h1>
+<form action="/submit-order" method="POST">
+
+<input type="hidden" name="customer_id" value="<%= customer[0].id %>">
+
+<table border="1">
+    
+    <tr>
+        <th> Product ID </th>
+        <th> Product Name </th>
+        <th> Inventory </th>
+        <th> Price per</th>
+        <th> Amount </th>
+    </tr>
+
+    <% products.forEach(product => { %>
+        <tr>
+            <td><%= product.id %></td>
+            <td><%= product.name %></td>
+            <td> <%= product.quantity %></td>
+            <td> <%= product.price %></td>
+            <td>
+                <input type="number" name="product_<%= product.id %>" min="0" max="<%= product.quantity %>" value="0" />
+            </td>
+
+        </tr>
+    <% }) %>
+</table>
+
+    <button type="submit">Submit Order</button>
+</form>
+<%- include("footer"); %>
+
+<!-- //product id name price(for 1) and quantity(in storage) -->

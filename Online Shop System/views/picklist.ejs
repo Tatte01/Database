@@ -1,0 +1,43 @@
+<%- include("header", { title: title }); %>
+
+<p>The Order ID is <%= res.length > 0 ? res[0].order_id : "N/A" %></p>
+
+<h1>Items</h1>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Amount Ordered</th>
+        <th>Inventory</th>
+        <th>Shelf</th>
+        <th>Stock</th>
+    </tr>
+
+    <% if (res.length > 0) { %>
+        <% res.forEach(item => { %>
+            <tr>
+                <td><%= item.id %></td>
+                <td><%= item.name %></td>
+                <td><%= item["amount ordered"] %></td>
+                <td><%= item.inventory %></td>
+                <td><%= item.shelf %></td>
+                <td><%= item.storage %></td>
+            </tr>
+        <% }); %>
+    <% } else { %>
+        <tr>
+            <td colspan="6" style="text-align:center;">No items found.</td>
+        </tr>
+    <% } %>
+
+</table>
+<!-- <td>
+    <a href="/shipped/<%= res[0].order_id %>/"></a>
+    <i>Hello</i>
+</td> -->
+
+<form action="/shipped/<%= res[0].order_id %>/" method="POST">
+    <button type="submit">Ship Order</button>
+</form>
+
+<%- include("footer"); %>

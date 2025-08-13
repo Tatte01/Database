@@ -1,0 +1,29 @@
+<%- include("header", { title: title }); %>
+
+<h2>Edit Product</h2>
+
+<% if (product && product.length > 0) { %> 
+    <% let p = product[0]; %>  <!-- Extract first product from array -->
+    
+    <form class="label-left" method="post" action="/edit">
+        <fieldset>
+            <legend>Edit Product</legend>
+
+            <label for="id">Id</label>
+            <input id="id" type="text" name="id" value="<%= p.id %>" readonly>
+
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name" value="<%= p.name %>">
+
+            <label for="price">Price</label>
+            <input id="price" type="number" name="price" value="<%= p.price %>">
+
+            <input type="submit" name="doit" value="Edit">
+        </fieldset>
+    </form>
+
+<% } else { %>
+    <p>No product found.</p>
+<% } %>
+
+<%- include("footer"); %>

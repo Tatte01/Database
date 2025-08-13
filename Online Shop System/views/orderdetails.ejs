@@ -1,0 +1,20 @@
+<%- include("header", { title: title }); %>
+
+<table border ="1">
+    <tr>
+        <th>OrderID</th>
+        <th>Product Name</th>
+        <th>Product ID</th>
+        <th>Quantity</th>
+    </tr>
+    <% for (const order of res) { %>
+    <tr>
+        <td><%= order.order_id %></td>
+        <td><%= order.name %></td>
+        <td><%= order.product_id %></td>
+        <td><%= order.quantity %></td>
+    </tr>
+    <% } %>
+</table>
+
+<%- include("footer"); %>

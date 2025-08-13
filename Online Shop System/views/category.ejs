@@ -1,0 +1,16 @@
+<%- include("header", {title: title}) %>
+
+<h2> This is the page were you see all the diffrent categorys !</h2>
+<p>I webbklienten, skapa en sida /eshop/category som visar en tabell över de produktkategorier som finns.</p>
+<table>
+    <tr>
+        <th>Name</th>
+    </tr>
+    <% for (const category of res) { %>
+        <tr>
+            <td><%= category.namn %></td>
+        </tr>
+    <% } %>
+</table>
+
+<%- include("footer"); %>

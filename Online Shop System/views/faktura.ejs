@@ -1,0 +1,29 @@
+<%- include("header", { title: title }); %>
+
+<h1>Fakturor</h1>
+
+<table>
+    <tr>
+        <th>Invoice ID</th>
+        <th>Order ID</th>
+        <th>Created</th>
+        <th>Total Amount</th>
+        <th>Status</th>
+        <th>Paid</th>
+    </tr>
+    <% for (const faktura of res) { %>
+        <tr>
+            <td>
+                <a href="/fakturalines/<%= faktura.invoice_id %>">
+                    <%= faktura.invoice_id %></a>
+                
+            </td>
+            <td><%= faktura.order_id %></td>
+            <td><%= faktura.invoice_date %></td>
+            <td><%= faktura.total_amount %></td>
+            <td><%= faktura.status %></td>
+            <td><%= faktura.payment_date %></td>
+        </tr>
+    <% } %>
+</table>
+<%- include("footer"); %>

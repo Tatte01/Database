@@ -1,0 +1,18 @@
+product_id, category_type
+27515,Hot       
+13135, Hot 
+45425, Hot  
+69585, Hot    
+41295, Hot  
+41295, Cold  
+89340, Cold 
+90720, Cold 
+89340, Beverages
+90720, Beverages
+13135, Caffeinated
+45425, Caffeinated
+69585, Caffeinated
+27515, Non-Caffeinated
+41295, Non-Caffeinated
+89340, Non-Caffeinated
+90720, Non-Caffeinated

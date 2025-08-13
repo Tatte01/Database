@@ -1,0 +1,40 @@
+<%- include("header", {title: title}); %>
+
+<p>I webbklienten, skapa en sida /eshop/product som visar en översikt av de produkter som finns. 
+    Visa (minst) produktens id, namn, pris och antal som finns i lagret.
+    Visa även information om vilken kategori som produkten tillhör (TIPS GROUP_CONCAT).</p>
+
+<h1>Products that are in the Store</h1>
+
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Category</th>
+        <th>Action</th>
+    </tr>
+    <% for (const product of res) { %>
+        <tr>
+            <td><a href="/product/<%= product.id %>"><%= product.id %></a></td>
+            <td><%= product.name %></td>
+            <td><%= product.price %></td>
+            <td><%= product.quantity %></td>
+            <td><%= product.category %>
+                <a href="/categoryadd/<%= product.id %>">
+                    <i class="fa-solid fa-plus"></i></a>
+                </td>
+            <td>
+
+                <a href="/edit/<%= product.id %>">
+                    <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+
+                <a href="/delete/<%= product.id %>">
+                    <i class="fa fa-trash-o" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+    <% } %>
+</table>
+
+<%- include("footer"); %>

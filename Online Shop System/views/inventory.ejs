@@ -1,0 +1,31 @@
+<%- include("header", { title: title }); %>
+
+<h2>Product Inventory</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Shelf</th>
+        <th>Quantity</th>
+        <th>Actions</th>
+    </tr>
+    <% for (const product of res) { %> 
+    <tr>
+        <td><%= product.id %></td>
+        <td><%= product.name %></td>
+        <td><%= product.shelf_location %></td>
+        <td><%= product.quantity %></td>
+        <td>
+            <a href="/invadd/<%= product.id %>/<%= product.shelf_location %>">
+                <i class="fa-solid fa-plus"></i>
+            </a>
+            <a href="/invdel/<%= product.id %>/<%= product.shelf_location %>">
+                <i class="fa-solid fa-minus"></i>
+            </a>
+        </td>
+    </tr>
+    <% } %>
+</table>
+
+<%- include("footer"); %>

@@ -1,0 +1,8 @@
+product_id, quantity, shelf_location
+27515, 100, Shelf A1 
+13135, 50, Shelf A1
+45425, 80, Shelf B2
+69585, 60, Shelf B2
+41295, 40, Shelf C1
+89340, 120, Shelf D2
+90720, 90, Shelf D2

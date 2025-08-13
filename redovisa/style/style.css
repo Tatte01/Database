@@ -1,0 +1,74 @@
+body {
+    margin: 8px auto;
+    background: #131318;
+    width: 1000px;
+}
+
+.intro {
+    padding-top: 50px;
+}
+.Menu {
+    color: blue;
+}
+
+p {
+    color: rgb(255, 255, 255);
+    width: 70%;
+}
+
+body {
+    color: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 8px auto;
+    padding: 0;
+    padding: hidden;
+    background-color:  #E47A47;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+ul li a.active {
+    background-color: rgb(226, 69, 69);
+}
+
+li {
+    float:left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding:  14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #00000085;
+}
+
+
+@media screen and (max-width: 720px) { /* On the phone screen is most commen in 720 x 1280*/
+    li  {float: none;}
+    .intro {
+        padding-top: 140px;
+    }
+    body {
+        padding-left: 50px;
+        padding-right: 50px;
+        overflow-x: hidden;
+    }
+    image {
+        width: 90%;
+        overflow: hidden;
+    }
+}
+
+h2 {
+    color: red;
+}

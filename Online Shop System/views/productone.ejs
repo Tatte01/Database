@@ -1,0 +1,35 @@
+<%- include("header", { title: title }); %>
+
+<% if (res) { %>
+    <h2>Product Details</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>ID</strong></td>
+                <td><%= res.id %></td>
+            </tr>
+            <tr>
+                <td><strong>Name</strong></td>
+                <td><%= res.name %></td>
+            </tr>
+            <tr>
+                <td><strong>Price</strong></td>
+                <td><%= res.price %></td>
+            </tr>
+            <tr>
+                <td><strong>Categories</strong></td>
+                <td><%= categories.join(', ') %></td>
+            </tr>
+        </tbody>
+    </table>
+<% } else { %>
+    <p>Product not found.</p>
+<% } %>
+
+<%- include("footer"); %>
